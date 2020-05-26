@@ -25,6 +25,8 @@ function createTokenSendResponse(user, res, next) {
     const payload = {
         _id: user._id,
         email: user.email,
+        firstname: user.firstname,
+        lastname: user.lastname
     }
     jwt.sign(payload, process.env.SECRET_TOKEN, {
         expiresIn: '1d'
@@ -78,7 +80,7 @@ router.post('/login', (req, res, next) => {
     const result = Joi.validate(req.body, schema)
     if (result.error === null) {
         users.findOne({
-            email: req.body.email
+            email: req.body.email,
         }).then(user => {
             if (user) {
                 bcrypt.compare(req.body.password, user.password).then(result => {
