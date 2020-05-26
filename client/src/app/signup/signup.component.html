@@ -1,29 +1,30 @@
-<div class="container">
-    <div class="card">
-        <div class="card-body">
-            <form>
-                <div class="form-group">
-                    <label for="exampleInputName">First Name</label>
-                    <input type="text" name="firstname" [(ngModel)]="firstname" class="form-control" id="exampleInputName1" placeholder="Enter First Name">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputName">Last Name</label>
-                    <input type="text" name="lastname" [(ngModel)]="lastname" class="form-control" id="exampleInputName2" placeholder="Enter Last Name">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" name="email" [(ngModel)]="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" name="password" [(ngModel)]="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword2">Confirm Password</label>
-                    <input type="password" name="confirm_password" [(ngModel)]="confirm_password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-                </div>
-                <button type="submit" (click)="submitForm()" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
+<div class="card">
+    <div class="card-header text-center text-uppercase font-weight-bold">
+        Sign Up
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputName">First Name</label>
+                <input type="text" name="firstname" [(ngModel)]="firstname" class="form-control" id="exampleInputName1" placeholder="Enter First Name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputName">Last Name</label>
+                <input type="text" name="lastname" [(ngModel)]="lastname" class="form-control" id="exampleInputName2" placeholder="Enter Last Name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" name="email" [(ngModel)]="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" name="password" [(ngModel)]="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword2">Confirm Password</label>
+                <input type="password" name="confirm_password" [(ngModel)]="confirm_password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+            </div>
+            <button type="submit" (click)="submitSignUpForm()" class="btn btn-primary">Sign Up</button>
+        </form>
     </div>
 </div>

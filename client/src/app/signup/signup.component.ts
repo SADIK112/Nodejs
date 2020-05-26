@@ -20,7 +20,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  submitForm() {
+  submitSignUpForm() {
     let user = {
       firstname: this.firstname,
       lastname: this.lastname,
@@ -41,8 +41,9 @@ export class SignupComponent implements OnInit {
         return response.json().then((error) => {
           throw new Error(error.message)
         })
-      }).then(() => {
-        this.router.navigate(['/'])
+      }).then((result) => {
+        localStorage.setItem('token', result.token)
+        this.router.navigate(['/dashboard'])
       }).catch((error) => {
         console.log(error)
       })
