@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   constructor(public router: Router, public route: ActivatedRoute) {
     this.route.queryParams
       .subscribe(params => {
-        this.returnUrl = params['return'] || '/forums'
+        this.returnUrl = params['return']
       })
 
   }

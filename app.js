@@ -3,14 +3,19 @@ const volleyball = require('volleyball');
 const auth = require('./auth/index.js');
 const cors = require('cors');
 const app = express();
+const middlewares = require('./auth/middlewares');
+const notes = require('./api/notes');
 require('dotenv').config();
 
 app.use(volleyball)
 app.use(express.json())
+app.use(middlewares.checkSetToken);
 
 app.get('/', (req, res) => {
+    console.log(req.user)
     res.json({
-        message: "welcome to node App"
+        message: "welcome to node App",
+        user: req.user,
     })
 })
 
@@ -19,6 +24,7 @@ app.use(cors({
 }))
 
 app.use('/auth', auth);
+app.use('/api/v1/notes', notes)
 
 function notFound(req, res, next) {
     res.status(404);

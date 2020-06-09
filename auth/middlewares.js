@@ -20,4 +20,15 @@ function checkSetToken(req, res, next) {
     }
 }
 
-module.exports = { checkSetToken }
+function isLoggedIn(req, res, next) {
+    console.log(req.user)
+    if (req.user) {
+        next();
+    } else {
+        const error = new Error("Unauthorized 🤐");
+        res.status(401)
+        next(error)
+    }
+}
+
+module.exports = { checkSetToken, isLoggedIn }
